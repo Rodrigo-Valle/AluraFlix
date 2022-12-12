@@ -1,11 +1,12 @@
 {
-    "extends": ["standard-with-typescript", "prettier"],
-    "parserOptions": {
-        "project": "./tsconfig.json"
-    },
-    "rules": {
-        "indent": ["error", 4],
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
+  "extends": ["standard-with-typescript", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "@typescript-eslint/strict-boolean-expressions": "off"
+  }
 }
