@@ -1,8 +1,16 @@
-import { httpResponse } from "../interface/http";
+import { IHttpResponse } from "@/presentation/interfaces";
+import { ServerError } from "@/presentation/errors";
 
-export const badRequest = (error: Error): httpResponse => {
+export const badRequest = (error: Error): IHttpResponse => {
   return {
     statusCode: 400,
     body: error
+  };
+};
+
+export const serverError = (): IHttpResponse => {
+  return {
+    statusCode: 500,
+    body: new ServerError()
   };
 };
