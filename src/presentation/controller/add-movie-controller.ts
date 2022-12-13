@@ -1,6 +1,6 @@
 import { IAddMovieService } from "@/application/interfaces";
 import { MissinParamError } from "@/presentation/errors";
-import { badRequest, serverError } from "@/presentation/helpers";
+import { badRequest, serverError, created } from "@/presentation/helpers";
 import { IController, IHttpRequest, IHttpResponse } from "@/presentation/interfaces";
 
 export class AddMovieController implements IController {
@@ -17,10 +17,7 @@ export class AddMovieController implements IController {
 
       const result = await this.addMovieService.add(httpRequest.body);
 
-      return {
-        statusCode: 201,
-        body: result
-      };
+      return created(result);
     } catch (error) {
       return serverError();
     }

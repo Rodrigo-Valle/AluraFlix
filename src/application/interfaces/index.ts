@@ -1,1 +1,1 @@
-export * from "./add-movie";
+export * from "./iadd-movie-service";

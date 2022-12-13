@@ -1,1 +1,1 @@
-export * from "./add-movie";
+export * from "./add-movie-controller";

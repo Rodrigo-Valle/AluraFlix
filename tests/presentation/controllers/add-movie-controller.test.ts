@@ -1,8 +1,9 @@
 import { AddMovieController } from "@/presentation/controller";
 import { MissinParamError } from "@/presentation/errors/missing-param";
 import { ServerError } from "@/presentation/errors";
-import { AddMovieDTO, IAddMovieService } from "@/application/interfaces";
+import { IAddMovieService } from "@/application/interfaces";
 import { Movie } from "@/domain/models";
+import { AddMovieDTO } from "@/domain/interfaces";
 
 const httpResponseMock = {
   id: "any_id",
@@ -22,7 +23,7 @@ const httpRequestMock = {
 const makeAddMovieService = (): IAddMovieService => {
   class AddMovieServiceStub implements IAddMovieService {
     async add(_addMovieDTO: AddMovieDTO): Promise<Movie> {
-      return httpResponseMock;
+      return await Promise.resolve(httpResponseMock);
     }
   }
   return new AddMovieServiceStub();
