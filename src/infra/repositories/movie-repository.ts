@@ -2,7 +2,6 @@ import { AddMovieDTO, IMovieRepository } from "@/domain/interfaces/imovie-reposi
 import { Movie } from "@/domain/models";
 import { DataSource } from "typeorm";
 import { MovieEntity } from "../entities";
-
 export class MovieRepository implements IMovieRepository {
   private readonly movieRepository;
   constructor(datasource: DataSource) {

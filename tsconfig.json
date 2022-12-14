@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "ES2022",
     "module": "commonjs",
-    "rootDir": "src",
+    "rootDirs": ["src", "tests"],
     "sourceMap": true,
     "outDir": "dist",
     "esModuleInterop": true,
